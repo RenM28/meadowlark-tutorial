@@ -1,23 +1,20 @@
 // conventional to add imports at top of file - not necessary
 // ./ indicates to Node not to look in node_modules dir
-const fortune = require('./lib/fortune')
-
 const express = require('express')
 const expressHandlebars = require('express-handlebars')
-
 const app = express()
+const port = process.env.PORT || 3000
+const fortune = require('./lib/fortune')
 
 // configure Handlebars view engine
 app.engine('handlebars', expressHandlebars({
 	defaultLayout: 'main',
 }))
+
 // configures Express to use view engine by default
 app.set('view engine', 'handlebars')
 
-const port = process.env.PORT || 3000
-
 // don't have to normalize url b/c this is provided by Express
-
 app.use(express.static(__dirname + '/public'))
 
 // home page
