@@ -2,7 +2,7 @@
   "name": "package.json",
   "version": "1.0.0",
   "description": "metadata for project",
-  "main": "meadowlark.js",
+  "main": "index.js",
   "scripts": {
     "test": "test"
   },
